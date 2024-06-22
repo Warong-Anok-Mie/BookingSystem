@@ -33,59 +33,54 @@
             </div>
         </nav>
         <div class="text-box">
-            <h1>Warong Anok Mie Register Page</h1>
-            <p>Please fill in all the required fields.</p>
+            <h1>Warong Anok Mie Login Page</h1>
+            <p>Welcome, please enter your credentials to login</p>
 
-			<form id="round" action="passedregister.php" method="post">
+			<form id="round" action=" " method="post">
 			
 				<b>Username: </b><br>
 			
 				<input type = "text" name = "username"> <br>
 			
 				<b>Password: </b> <br>
-				<input type = "text" name = "pass"> <br>
-
-                <b>Email: </b> <br>
-				<input type = "text" name = "email"> <br>
+				<input type = "password" name = "pass"> <br><br><br>
 			
-				<input type ="submit" value="Register" name="register"><br>
+				<input type ="submit" value="Login" name="login"><br>
 
-				<p>Already have an account? <a href="anokmielogin.php">Click here</a> to login!</p>
+				<p>New user? <a href="registerPage.php">Click here</a> to register!</p>
 
 			</form>
         </div>
     </section>
 
-    <?php
+	<?php
+		if(isset($_POST["login"])){
 
-		if(isset($_POST["create"])){
+			$hostname = "localhost:3307";
+    		$username = "root";
+    		$password = "";
+    		$dbname = "student";
 
-		    $hostname = "localhost:3307";
-		    $username = "root";
-		    $password = "";
-		    $dbname = "student";
+   			$connect = mysqli_connect($hostname, $username, $password, $dbname)
+    		OR DIE ("Connection failed");
 
-		    $connect = mysqli_connect($hostname, $username, $password, $dbname)
-		    OR DIE ("CONNECTION FAILED");
+    		$user = $_POST["username"];
+    		$pass = $_POST["pass"];
 
-		    $user = $_POST["username"];
-		    $pass = $_POST["pass"];
-            $email = $_POST["email"];
+    		$sql = "SELECT username, pass FROM anokmielogon WHERE username = '$user' AND pass = '$pass'";
 
-		    $sql = "INSERT INTO anokmielogon (username, pass, email) VALUES ('$user', '$pass', '$email')";
+    		$sendsql = mysqli_query($connect, $sql);
 
-		    $sendsql = mysqli_query($connect, $sql);
+    		if($sendsql){
+        		if(mysqli_num_rows($sendsql)>0){
+					header("Location:passedlogin.php");
+				}else{
+					echo "Username or password incorrect";
+				}
 
-				
-		    if($sendsql){
-			    if(mysqli_num_rows($sendsql)>0){
-                    echo "Successfully registered. You may go back to the login page and use your credentials.";
-			    }else {
-				 echo "Username or password incorrect";
-			    }
-		    } else {
-			echo "QUERY FAILED!";
-		    }
+    		}else{
+        		echo "Query failed!";
+    		}
 		}
 	?>
 </body>
