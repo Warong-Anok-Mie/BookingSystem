@@ -13,13 +13,34 @@
             display: flex;
             flex-direction: column;
             align-items: center;
-            margin-top: 100px;
+            margin-top: 50px;
             padding: 20px;
             background-color: #f2f2f2;
             border-radius: 5px;
-            max-width: 3000px;
+            max-width: 300px;
             margin-left: auto;
             margin-right: auto;
+        }
+
+        .booking-form input[type="text"],
+        .booking-form input[type="tel"],
+        .booking-form input[type="email"],
+        .booking-form input[type="date"],
+        .booking-form select {
+            width: 100%;
+            padding: 10px; /* Added padding for better textbox appearance */
+            margin-bottom: 10px; /* Added margin between input fields */
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+
+        .booking-form input[type="submit"] {
+            padding: 10px 20px; /* Increased padding for submit button */
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
         }
     </style>
 </head>
@@ -48,9 +69,10 @@
             </div>
         </nav>
 
+<h1 style="color: #FEA116; text-align: center; margin-top: 50px">Warong Anok Mie Booking Form</h1>
 <div class="booking-form">          
-    <h1 style="font-color: white;">Warong Anok Mie Booking Form</h1>
-    <form action="process_booking.php" method="post">
+    
+    <form action="chooseTable.php" method="post">
         <div>
             <label for="name">Name:</label>
             <input type="text" id="name" name="name" required>
@@ -109,8 +131,8 @@
                     <option value="01:30 h">01:30</option>
                   </select>
         </div>
-        <div>
-            <input type="submit" value="Book Table">
+        <div style="display: flex; justify-content: center;">
+            <input type="submit" value="Book Table" href="chooseTable.php">
         </div>
     </form>
 </div>
