@@ -1,0 +1,61 @@
+.header {
+    min-height: 100vh;
+    width: 100%;
+    background-image: 
+        linear-gradient(rgba(4, 9, 30, 0.7), rgba(4, 9, 30, 0.7)), 
+        url(img/aboutus.jpg), /* First image */
+        url(img/about-warong.jpg), /* Second image */
+        url(img/about-warong2.jpg); /* Third image */
+    background-position: center;
+    background-size: cover;
+    position: relative;
+    overflow: hidden;
+    animation: slideshow 16s infinite; /* Adjust animation duration as needed */
+}
+
+@keyframes slideshow {
+    0% {
+        opacity: 1;
+    }
+    25% {
+        opacity: 0;
+    }
+    33.33% {
+        opacity: 1;
+    }
+    58.33% {
+        opacity: 0;
+    }
+    66.66% {
+        opacity: 1;
+    }
+    91.66% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 0;
+    }
+}
+
+footer {
+    text-align: center;
+    padding: 20px;
+    background: #333;
+    color: #fff;
+}
+
+footer p {
+    margin: 10px 0;
+}
+
+footer .social-icons {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+}
+
+footer .social-icons a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 1.2rem;
+}

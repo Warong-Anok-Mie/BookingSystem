@@ -1,0 +1,81 @@
+body {
+    background-image: linear-gradient(rgba(4, 9, 30, 0.7), rgba(4, 9, 30, 0.7)), url(img/aboutus.jpg);
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed; /* Optional: Ensures the background image stays fixed while scrolling */
+}
+
+
+
+
+.create-account-container {
+    position: relative;
+    z-index: 1; /* Ensure it appears in front */
+    background-color: rgba(255, 255, 255, 0.9); /* Example background color */
+    padding: 50px;
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+    font-family: 'Poppins', sans-serif;
+    margin: auto;
+    max-width: 1000px; /* Limit maximum width */
+    width: 100%; /* Adjust width as needed */
+    
+}
+
+.create-account-container h1 {
+    font-size: 24px;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.create-account-container form {
+    margin-top: 20px;
+}
+
+.create-account-container label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.create-account-container input[type="text"],
+.create-account-container input[type="password"],
+.create-account-container input[type="email"],
+.create-account-container input[type="tel"] {
+    width: calc(100% - 20px);
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.create-account-container button[type="submit"] {
+    background-color: #FEA116;
+    color: #fff;
+    border: none;
+    padding: 12px 20px;
+    font-size: 16px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    width: 100%; /* Full-width button */
+}
+
+.create-account-container button[type="submit"]:hover {
+    background-color: #0F172B;
+}
+
+.create-account-container p {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.create-account-container a {
+    color: #FEA116;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.create-account-container a:hover {
+    color: #0F172B;
+}

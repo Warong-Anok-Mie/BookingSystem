@@ -1,3 +1,59 @@
+<?php
+session_start(); // Start or resume session
+
+// Database connection parameters
+$hostname = "localhost:3307"; // Update with your MySQL server address and port
+$usernameDB = "root";
+$password = ""; // Replace with your actual database password
+$dbName = "anokmie";
+
+// Establishing the connection
+$conn = new mysqli($hostname, $usernameDB, $password, $dbName);
+
+// Check connection
+if ($conn->connect_error) {
+    die("Connection failed: " . $conn->connect_error);
+}
+
+// Check if username session variable is set
+if (!isset($_SESSION['username'])) {
+    // Redirect to login if username is not set
+    header("Location: anokmielogin.php");
+    exit;
+}
+
+// Fetch table details from the database
+$sql = "SELECT * FROM tables";
+$result = $conn->query($sql);
+
+$tables = [];
+if ($result->num_rows > 0) {
+    while ($row = $result->fetch_assoc()) {
+        $tables[$row['table_id']] = [
+            'table_name' => $row['table_name'],
+            'num_chairs' => $row['num_chairs'],
+            'price' => $row['price'],
+            'status' => $row['status'] // Fetch status from database
+        ];
+    }
+}
+
+// Handle form submission when table is selected
+if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['tableNo'])) {
+    $tableNo = $_POST['tableNo'];
+
+    // Store selected table details in session
+    $_SESSION['table_id'] = $tableNo;
+    $_SESSION['table_name'] = $tables[$tableNo]['table_name'];
+    $_SESSION['num_chairs'] = $tables[$tableNo]['num_chairs'];
+    $_SESSION['price'] = $tables[$tableNo]['price'];
+
+    // Redirect to booking confirmation page
+    header("Location: bookConfirm.php");
+    exit;
+}
+?>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -7,96 +63,7 @@
     <title>Warong Anok Mie Bookings</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.2/css/fontawesome.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/brands.min.css" integrity="sha512-DJLNx+VLY4aEiEQFjiawXaiceujj5GA7lIY8CHCIGQCBPfsEG0nGz1edb4Jvw1LR7q031zS5PpPqFuPA8ihlRA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-</head>
-<body>
-    <section class="header">
-        <nav class="navbar">
-            <div class="brand-title">
-                <img src="img/WARONG.jpg" alt="Logo" class="logo">
-                Warong Anok Mie
-            </div>
-            <a href="#" class="toggle-button">
-                <span class="bar"></span>
-                <span class="bar"></span>
-                <span class="bar"></span>
-                <span class="bar"></span>
-            </a>
-            <div class="navbar-links">
-                <ul>
-                    <li><a href="index.html">Home</a></li>
-                    <li><a href="#">About</a></li>
-                    <li><a href="#">Contact</a></li>
-                    <li><a href="anokmielogin.php" class="hero-btn book">Book a Table</a></li>
-                </ul>
-            </div>
-        </nav>
-
-<h1 style="color: #FEA116; text-align: center; margin-top: 50px">Select Your Table Position</h1>
-<section class="table-selection">
-   
-    <div class="table-options">
-        <div class="table table-1">
-            <h3>Table 1</h3>
-            <p>1 Chair</p>
-            <button class="select-btn">Select</button>
-        </div>
-
-        <div class="table table-2">
-            <h3>Table 2</h3>
-            <p>2 Chairs</p>
-            <button class="select-btn">Select</button>
-        </div>
-
-        <div class="table table-3">
-            <h3>Table 3</h3>
-            <p>3 Chairs</p>
-            <button class="select-btn">Select</button>
-        </div>
-
-        <div class="table table-4">
-            <h3>Table 4</h3>
-            <p>1 Chair</p>
-            <button class="select-btn">Select</button>
-        </div>
-
-        <div class="table table-5">
-            <h3>Table 5</h3>
-            <p>2 Chairs</p>
-            <button class="select-btn">Select</button>
-        </div>
-
-        <div class="table table-6">
-            <h3>Table 6</h3>
-            <p>3 Chairs</p>
-            <button class="select-btn">Select</button>
-        </div>
-
-        <div class="table table-7">
-            <h3>Table 7</h3>
-            <p>3 Chairs</p>
-            <button class="select-btn">Select</button>
-        </div>
-
-        <div class="table table-8">
-            <h3>Table </h3>
-            <p>4 Chairs</p>
-            <button class="select-btn">Select</button>
-        </div>
-
-        <div class="table table-9">
-            <h3>Table 9</h3>
-            <p>4 Chairs</p>
-            <button class="select-btn">Select</button>
-        </div>
-
-        <div class="table table-10">
-            <h3>Table 10</h3>
-            <p>5 Chairs</p>
-            <button class="select-btn">Select</button>
-        </div>
-    </div>
-</section>
-
+  
 <style>
     .table-selection {
         margin-top: 50px;
@@ -163,7 +130,63 @@
         cursor: pointer;
         font-size: 18px;
     }
+
+    /* Additional style for disabled button */
+    .select-btn.disabled {
+        background-color: #e74c3c; /* Red */
+        cursor: not-allowed;
+    }
 </style>
 
+</head>
+<body>
+    <section class="header">
+        <nav class="navbar">
+            <div class="brand-title">
+                <img src="img/WARONG.jpg" alt="Logo" class="logo">
+                Warong Anok Mie
+            </div>
+            <a href="#" class="toggle-button">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </a>
+            <div class="navbar-links">
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="#">About</a></li>
+                    <li><a href="#">Contact</a></li>
+                    <li><a href="anokmielogin.php" class="hero-btn book">Book a Table</a></li>
+                </ul>
+            </div>
+        </nav>
+
+        <h1 style="color: #FEA116; text-align: center; margin-top: 50px">Select Your Table Position</h1>
+        
+        <section class="table-selection">
+            <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post">
+                <div class="table-options">
+                    <?php
+                    // Display table options dynamically
+                    foreach ($tables as $table_id => $table) {
+                        $buttonClass = ($table['status'] == 'approved') ? 'select-btn disabled' : 'select-btn';
+                        $buttonText = ($table['status'] == 'approved') ? 'Unavailable' : 'Select';
+                        echo '<div class="table table-' . $table_id . '">';
+                        echo '<h3>Table ' . $table_id . '</h3>';
+                        echo '<p>' . $table['num_chairs'] . ' Chairs</p>';
+                        echo '<p>Price: RM ' . number_format($table['price'], 2) . '</p>';
+                        echo '<button class="' . $buttonClass . '" name="tableNo" value="' . $table_id . '" ';
+                        echo ($table['status'] == 'approved') ? 'disabled' : '';
+                        echo '>' . $buttonText . '</button>';
+                        echo '</div>';
+                    }
+                    ?>
+                </div>
+            </form>
+        </section>
+
     </section>
+
 </body>
+</html>

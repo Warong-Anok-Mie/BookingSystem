@@ -6,6 +6,16 @@
     padding: 0;
     box-sizing: border-box;
 }
+.video-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 20px; /* Adjust margin as needed */
+}
+
+.video-container video {
+    width: 1000px; /* Set the width of the video */
+}
 
 body {
     font-family: 'Calistoga', cursive;
@@ -14,14 +24,95 @@ body {
     padding: 0;
 }
 
+
+/* Header styles */
 /* Header styles */
 .header {
     min-height: 100vh;
     width: 100%;
-    background-image: linear-gradient(rgba(4, 9, 30, 0.7), rgba(4, 9, 30, 0.7)), url(img/restaurant.jpeg);
-    background-position: center;
+    background-position: right;
     background-size: cover;
     position: relative;
+    animation: slideshow 16s linear infinite;
+}
+
+@keyframes slideshow {
+    0% {
+        background-image: linear-gradient(rgba(4, 9, 30, 0.7), rgba(4, 9, 30, 0.7)), url(img/aboutus.jpg);
+        background-position: right;
+    }
+    40% {
+        background-image: linear-gradient(rgba(4, 9, 30, 0.7), rgba(4, 9, 30, 0.7)), url(img/about-warong1.jpg);
+        background-position: 75% 0%;
+    }
+    75% {
+        background-image: linear-gradient(rgba(4, 9, 30, 0.7), rgba(4, 9, 30, 0.7)), url(img/ramen.jpg);
+        background-position: 50% 0%;
+    }
+    100% {
+        background-image: linear-gradient(rgba(4, 9, 30, 0.7), rgba(4, 9, 30, 0.7)), url(img/about-warong.jpg);
+        background-position: 25% 0%;
+    }
+    
+}
+
+
+/* Header Styling */
+header {
+    background-color: #333;
+    color: #fff;
+    padding: 10px 0;
+}
+
+.logo {
+    font-size: 24px;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+.logo a {
+    color: #fff;
+    text-decoration: none;
+}
+
+.nav-links {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    text-align: right;
+}
+
+.nav-links li {
+    display: inline-block;
+    margin-left: 20px;
+}
+
+.nav-links li a {
+    color: #fff;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.nav-links li a:hover {
+    color: #ffd700; /* Change to your hover color */
+}
+
+/* Button Style for Index Page */
+.index-button {
+    display: inline-block;
+    background-color: #4CAF50;
+    color: white;
+    text-align: center;
+    padding: 10px 20px;
+    text-decoration: none;
+    font-size: 18px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.index-button:hover {
+    background-color: #45a049;
 }
 
 .text-box {
@@ -622,4 +713,144 @@ body {
     font-size: 36px;
     font-weight: bold;
     animation: countup 2s ease-out forwards;
+}
+
+/* about us page*/
+#about-section {
+    background-image: url('img/aboutus.jpg'); /* Check path and filename */
+    background-size: cover; /* Adjust as needed */
+    background-position: center; /* Adjust as needed */
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Button Style for Index Page */
+.index-button {
+    display: inline-block;
+    background-color: #4CAF50;
+    color: white;
+    text-align: center;
+    padding: 10px 20px;
+    text-decoration: none;
+    font-size: 18px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.index-button:hover {
+    background-color: #45a049;
+}
+/* Styles for register.form */
+.register-form {
+    width: 100%;
+    max-width: 600px;
+    margin: auto;
+    background-color: #fff;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+}
+
+.register-form h2 {
+    font-size: 24px;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.register-form label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.register-form input[type="text"],
+.register-form input[type="email"],
+.register-form input[type="password"] {
+    width: calc(100% - 20px);
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.register-form input[type="submit"] {
+    background-color: #FEA116;
+    color: #fff;
+    border: none;
+    padding: 12px 20px;
+    font-size: 16px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.register-form input[type="submit"]:hover {
+    background-color: #0F172B;
+}
+
+.register-form .form-footer {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.register-form .form-footer a {
+    color: #FEA116;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.register-form .form-footer a:hover {
+    color: #0F172B;
+}
+
+/* General styles for background image */
+.about-us {
+    background-color: grey;
+    color: blueviolet; /* Adjust text color for better readability */
+    padding: 50px 0;
+}
+
+.about-us .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+
+.content-section, .image-section {
+    width: 48%;
+}
+
+.image-container {
+    margin-bottom: 10px;
+}
+
+.image-container img {
+    width: 100%;
+    height: auto;
+}
+
+
+footer {
+    text-align: center;
+    padding: 20px;
+    background: #333;
+    color: #fff;
+}
+
+footer p {
+    margin: 10px 0;
+}
+
+footer .social-icons {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+}
+
+footer .social-icons a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 1.2rem;
 }

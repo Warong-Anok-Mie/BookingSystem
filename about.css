@@ -1,0 +1,203 @@
+@import url('https://fonts.googleapis.com/css2?family=Calistoga&display=swap');
+.header {
+    
+    width: 100%;
+    background-position: right;
+    background-size: cover;
+    position: relative;
+}
+body {
+    font-family: 'Calistoga', cursive;
+    background-color: #DFDFDF;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    background-color: #333;
+    color: #fff;
+    padding: 10px 0;
+}
+
+.logo {
+    font-size: 24px;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+.logo a {
+    color: #fff;
+    text-decoration: none;
+}
+
+.nav-links {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    text-align: right;
+}
+
+.nav-links li {
+    display: inline-block;
+    margin-left: 20px;
+}
+
+.nav-links li a {
+    color: #fff;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.nav-links li a:hover {
+    color: #ffd700; /* Change to your hover color */
+}
+
+/* Button Style for Index Page */
+.index-button {
+    display: inline-block;
+    background-color: #4CAF50;
+    color: white;
+    text-align: center;
+    padding: 10px 20px;
+    text-decoration: none;
+    font-size: 18px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.index-button:hover {
+    background-color: #45a049;
+}
+
+.text-box {
+    width: 90%;
+    color: #fff;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+}
+
+.text-box h1 {
+    font-size: 42px;
+}
+
+.text-box p {
+    margin: 10px 0 40px;
+    font-size: 14px;
+}
+
+.hero-btn {
+    display: inline-block;
+    text-decoration: none;
+    color: #fff;
+    border: 1px solid #FEA116;
+    padding: 12px 34px;
+    background: #FEA116;
+    cursor: pointer;
+}
+
+.hero-btn:hover {
+    background: transparent;
+    border-color: #FEA116;
+    color: #FEA116;
+}
+
+/* Navbar styles */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #0F172B;
+    color: #FEA116;
+    padding: 0.5rem 1rem;
+}
+
+.brand-title {
+    display: flex;
+    align-items: center;
+    font-size: 2rem;
+}
+
+.brand-title .logo {
+    margin-right: 0.5rem;
+    height: 40px;
+    width: auto;
+}
+
+.navbar-links ul {
+    display: flex;
+    margin: 0;
+    padding: 0;
+}
+
+.navbar-links li {
+    list-style: none;
+}
+
+.navbar-links li a {
+    display: block;
+    text-decoration: none;
+    color: white;
+    padding: 1rem;
+}
+
+.navbar-links li:hover {
+    background-color: #555;
+}
+
+.toggle-button {
+    display: none;
+    position: absolute;
+    top: .75rem;
+    right: 1rem;
+    flex-direction: column;
+    width: 30px;
+    height: 21px;
+}
+
+.toggle-button .bar {
+    height: 3px;
+    width: 100%;
+    background-color: white;
+    border-radius: 10px;
+}
+
+@media (max-width: 800px) {
+    .navbar {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .toggle-button {
+        display: flex;
+    }
+
+    .navbar-links {
+        display: none;
+        width: 100%;
+        transition: transform 0.5s ease-in-out;
+        transform: translateY(-100%);
+    }
+
+    .navbar-links.active {
+        display: flex;
+        transform: translateY(0);
+    }
+
+    .text-box h1 {
+        font-size: 62px;
+    }
+
+    .hero-btn {
+        border: 1px solid #fff;
+        background: transparent;
+    }
+
+    .hero-btn:hover {
+        background: #FEA116;
+        color: #000;
+    }
+}

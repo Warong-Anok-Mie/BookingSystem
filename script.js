@@ -14,6 +14,7 @@ toggleButton.addEventListener('click', () => {
 }, 300); 
 });
 document.addEventListener('DOMContentLoaded', function() {
+    
     const experienceSpan = document.getElementById('experience');
     const startCount = 0;
     const endCount = 9;
@@ -42,6 +43,14 @@ document.addEventListener('DOMContentLoaded', function() {
         );
     }
 
+    function storeUsername(username) {
+        sessionStorage.setItem('username', username);
+    }
+    
+    function changeParentPage(url) {
+        window.location.replace(url);
+    }
+    
 
     function handleScroll() {
         if (isInViewport(experienceSpan)) {

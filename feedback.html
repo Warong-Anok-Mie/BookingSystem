@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <script src="script.js" defer></script>
+    <title>Warong Anok Mie Bookings</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.2/css/fontawesome.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/brands.min.css" integrity="sha512-DJLNx+VLY4aEiEQFjiawXaiceujj5GA7lIY8CHCIGQCBPfsEG0nGz1edb4Jvw1LR7q031zS5PpPqFuPA8ihlRA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <style>
+        .feed-form {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-top: 50px;
+            padding: 30px;
+            background-color: #f4f6dc;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            max-width: 400px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .feed-form label {
+            font-weight: bold;
+            margin-bottom: 10px;
+            display: block;
+        }
+
+        .feed-form input[type="text"], .feed-form input[type="email"], .feed-form textarea {
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            width: 100%;
+            margin-bottom: 20px;
+        }
+
+        
+        .feed-form input[type="submit"] {
+        padding: 10px 20px;
+        background-color: #FEA116;
+        color: white;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+        /* Add some fancy effects */
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+        transition: background-color 0.3s ease;
+    }
+
+    .feed-form [type="submit"]:hover {
+        background-color: #FEA116;
+        box-shadow: 0 0 20px rgba(0, 0, 0, 0.4);
+    }
+
+    .feed-form input[type="submit"]:active {
+        background-color: #FEA116;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    }
+    </style>
+</head>
+<body>
+    <section class="header">
+        <nav class="navbar">
+            <div class="brand-title">
+                <img src="img/WARONG.jpg" alt="Logo" class="logo">
+                Warong Anok Mie
+            </div>
+            <a href="#" class="toggle-button">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </a>
+            <div class="navbar-links">
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="#">About</a></li>
+                    <li><a href="#">Contact</a></li>
+                    <li><a href="anokmielogin.php" class="hero-btn book">Book a Table</a></li>
+
+
+                </ul>
+            </div>
+        </nav>
+
+        <h1 style="color: #FEA116; text-align: center; margin-top: 50px">Feedback</h1>
+        <p style="color: #f4f6dc; text-align: center; margin-top: 10px">Please provide your feedback about our restaurant, food, and service</p>
+            <p style="color: #f4f6dc; text-align: center;">(even if it wasn't to your liking) to help us improve :)</p>
+
+        <div class="feed-form">
+            
+            <form action="submit_feedback.php" method="post">
+                <div>
+                <label for="name">Name:</label>
+                <input type="text" name="name" placeholder="Your Name" required>
+                </div>
+                
+                <div> 
+                <label for="email">Email:</label>
+                <input type="email" name="email" placeholder="Your Email" required>
+                </div>
+                
+                <div>
+                <label for="feedback">Feedback:</label>
+                <textarea name="feedback" placeholder="Enter your feedback here..." required></textarea>
+                </div>
+               
+                <div style="display: flex; justify-content: center;">
+                <input type="submit"></input>
+                </div>
+                
+            </form>
+        </div>
+    </section>
+    <script>
+        if (window.location.search.indexOf("submitted=true") > -1) {
+            alert("Feedback submitted successfully!");
+            // Remove the URL parameter
+            window.history.replaceState({}, '', window.location.pathname);
+        }
+    </script>
+</body>
+</html>

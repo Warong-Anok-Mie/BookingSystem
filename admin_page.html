@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Warong Anok Mie Admin Dashboard</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="sidebar.css">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.2/css/fontawesome.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/brands.min.css"
+        integrity="sha512-DJLNx+VLY4aEiEQFjiawXaiceujj5GA7lIY8CHCIGQCBPfsEG0nGz1edb4Jvw1LR7q031zS5PpPqFuPA8ihlRA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <style>
+        /* Additional styles for the dropdown */
+        .dropdown {
+            position: relative;
+            display: inline-block;
+            margin-top: 20px; /* Adjust as needed */
+        }
+        
+        .dropdown .dropdown-header {
+            color: #bdc3c7;
+            font-size: 14px;
+            cursor: pointer;
+        }
+        
+        .dropdown .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: #34495e;
+            width: 200px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            z-index: 1001;
+            margin-top: 5px;
+        }
+        
+        .dropdown .dropdown-content a {
+            color: #ecf0f1;
+            display: block;
+            padding: 10px 15px;
+            text-decoration: none;
+            transition: background-color 0.3s ease;
+        }
+        
+        .dropdown .dropdown-content a:hover {
+            background-color: #3b4b61;
+        }
+        
+        .dropdown.show .dropdown-content {
+            display: block;
+        }
+    </style>
+</head>
+<body>
+    <div class="sidebar">
+        <div class="brand-title">
+            <img src="img/WARONG.jpg" alt="Logo" class="logo">
+            <span class="brand-text">Warong Anok Mie</span>
+        </div>
+
+        <ul class="sidebar-menu">
+            <li><a href="admin_page.html">Admin Dashboard</a></li>
+            <li><a href="manage-subadmins.php">Manage Sub Admins</a></li>
+            <li><a href="allbookings.php">All Bookings</a></li>
+            <li><a href="approve_admin.php">Approved Bookings</a></li>
+            <li><a href="totalsales.php">Total Sales Record</a></li>
+            <li><a href="tablehistory.php">Tables History Record</a></li>
+            <li><a href="manage_users.php">Manage Users</a></li> <!-- New Manage Users link -->
+            <li class="dropdown">
+                <span class="dropdown-header">Account Settings</span>
+                <div class="dropdown-content">
+                    <a href="changepassword.html">Change Password</a>
+                    <a href="#" onclick="confirmLogout()">Logout</a>
+                    <a href="profile_settings.php">Profile Settings</a>
+                </div>
+            </li>
+        </ul>
+    </div>
+
+    <section class="header">
+        <nav class="navbar">
+            <div class="brand-title">
+                <img src="img/WARONG.jpg" alt="Logo" class="logo">
+                Warong Anok Mie Admin Page
+            </div>
+            <a href="#" class="toggle-button">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </a>
+            <div class="navbar-links">
+                <ul>
+                    <li><a href="admin_login.html" class="hero-btn book">Log Out</a></li> <!-- Corrected logout link -->
+                </ul>
+            </div>
+        </nav>
+
+        <div class="text-box">
+            <p>Welcome to the admin dashboard of Warong Anok Mie!</p>
+            <br>
+
+            <div class="row">
+                <div class="adminlist">
+                    <a href="manage-subadmins.php" class="hero-btn">Manage Sub Admins</a>
+                </div>
+                <div class="userlist">
+                    <a href="manage_users.php" class="hero-btn">Manage Customers</a>
+                </div>
+                <div class="allbooking">
+                    <a href="allbookings.php" class="hero-btn">All Bookings</a>
+                </div>
+                <div class="approve">
+                    <a href="approve_admin.php" class="hero-btn">Approved Bookings</a>
+                </div>
+            </div>
+            <div class="row">
+                <div class="totalsales">
+                    <a href="totalsales.php" class="hero-btn">Total Sales Record</a>
+                </div>
+                <div class="tablehistory">
+                    <a href="tablehistory.php" class="hero-btn">Table History Record</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        function confirmLogout() {
+            if (confirm('Are you sure you want to log out?')) {
+                window.location.href = 'admin_login.html'; // Redirect to logout page
+            }
+            // If cancel, do nothing
+        }
+
+        // JavaScript to toggle dropdown menu
+        document.addEventListener('DOMContentLoaded', function () {
+            var dropdownHeaders = document.querySelectorAll('.dropdown .dropdown-header');
+
+            dropdownHeaders.forEach(function (dropdownHeader) {
+                dropdownHeader.addEventListener('click', function () {
+                    var dropdown = this.parentElement;
+                    dropdown.classList.toggle('show');
+                });
+            });
+
+            // Close dropdown if clicked outside
+            document.addEventListener('click', function (e) {
+                var dropdowns = document.querySelectorAll('.dropdown');
+                dropdowns.forEach(function (dropdown) {
+                    if (!dropdown.contains(e.target)) {
+                        dropdown.classList.remove('show');
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>

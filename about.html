@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="about.css">
+    <script src="script.js" defer></script>
+    <title>About Us - Warong Anok Mie</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.2/css/fontawesome.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/brands.min.css" integrity="sha512-DJLNx+VLY4aEiEQFjiawXaiceujj5GA7lIY8CHCIGQCBPfsEG0nGz1edb4Jvw1LR7q031zS5PpPqFuPA8ihlRA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <style>
+        body, html {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            height: 100%;
+            font-family: 'Arial', sans-serif;
+        }
+
+        .wrapper {
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+
+        header {
+            background-color: #333;
+            color: #fff;
+            padding: 1rem 0;
+            position: sticky;
+            top: 0;
+            width: 100%;
+            z-index: 1000;
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        .logo a {
+            color: #fff;
+            font-size: 1.5rem;
+            text-decoration: none;
+        }
+
+        .nav-links {
+            list-style: none;
+            display: flex;
+            gap: 1.5rem;
+        }
+
+        .nav-links a {
+            color: #fff;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .nav-links a:hover, .nav-links a.active {
+            color: #ff6600;
+        }
+
+        .about {
+            padding: 4rem 2rem;
+            flex: 1;
+        }
+
+        .container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .content-section, .image-section {
+            flex: 1;
+            min-width: 300px;
+        }
+
+        .title h1 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .content h3 {
+            font-size: 1.8rem;
+            margin-bottom: 1rem;
+        }
+
+        .content p {
+            font-size: 1rem;
+            line-height: 1.6;
+            margin-bottom: 1rem;
+        }
+
+        .content .more-text {
+            display: none;
+        }
+
+        .button {
+            margin-top: 1.5rem;
+        }
+
+        .index-button {
+            background-color: #ff6600;
+            color: #fff;
+            padding: 0.75rem 1.5rem;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+            cursor: pointer;
+        }
+
+        .index-button:hover {
+            background-color: #e55d00;
+        }
+
+        .social i {
+            font-size: 1.5rem;
+            margin-right: 1rem;
+            color: #ff6600;
+            transition: color 0.3s ease;
+        }
+
+        .social i:hover {
+            color: #e55d00;
+        }
+
+        .image-section {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1rem;
+        }
+
+        .image-container img {
+            width: 100%;
+            border-radius: 10px;
+            transition: transform 0.3s ease;
+        }
+
+        .image-container img:hover {
+            transform: scale(1.05);
+        }
+
+        footer {
+            background-color: #333;
+            color: #fff;
+            text-align: center;
+            padding: 2rem 0;
+        }
+
+        .social-icons a {
+            color: #ff6600;
+            margin: 0 0.5rem;
+            font-size: 1.5rem;
+            transition: color 0.3s ease;
+        }
+
+        .social-icons a:hover {
+            color: #e55d00;
+        }
+
+        footer p {
+            margin-top: 1rem;
+            font-size: 0.875rem;
+        }
+    </style>
+</head>
+<body>
+    <div class="wrapper">
+        <!-- Header Section -->
+        <header>
+            <nav>
+                <div class="logo">
+                    <a href="index.html">Warong Anok Mie</a>
+                </div>
+                <ul class="nav-links">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="menu.html">Menu</a></li>
+                    <li><a href="about.html" class="active">About Us</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </nav>
+        </header>
+
+        <!-- About Us Section -->
+        <section class="about">
+            <div class="container">
+                <div class="content-section">
+                    <div class="title">
+                        <h1>About Us</h1>
+                    </div>
+                    <div class="content">
+                        <h3>Who We Are</h3>
+                        <p>Warong Anok Mie is dedicated to bringing you the best local flavors with a modern twist. Our team of skilled chefs uses only the freshest ingredients to create mouth-watering dishes that will keep you coming back for more.</p>
+                        <p>Established in 2021, Warong Anok Mie has quickly become a favorite dining spot for locals and tourists alike. We take pride in our friendly service, cozy ambiance, and a menu that offers something for everyone.</p>
+                        <div class="more-text">
+                            <p>We offer a wide variety of dishes, from traditional local favorites to innovative new creations that blend the best of local and international cuisine. Our mission is to provide an exceptional dining experience, whether you're joining us for a quick lunch, a family dinner, or a special occasion.</p>
+                        </div>
+                        <div class="button">
+                            <a href="#" class="index-button" id="toggleButton">Learn More</a>
+                        </div>
+                    </div>
+                  
+                </div>
+                <div class="image-section">
+                    <div class="image-container">
+                        <img src="img/about-1.jpg" alt="About Image 1">
+                    </div>
+                    <div class="image-container">
+                        <img src="img/about-2.jpg" alt="About Image 2">
+                    </div>
+                    <div class="image-container">
+                        <img src="img/about-3.jpg" alt="About Image 3">
+                    </div>
+                    <div class="image-container">
+                        <img src="img/about-4.jpg" alt="About Image 4">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Footer Section -->
+        <footer>
+            <div class="social-icons">
+                <a href="https://www.facebook.com/p/Warong-Anok-Mie-100083042575365/"><i class="fa-brands fa-facebook"></i></a>
+                <a href="#"><i class="fa-brands fa-twitter"></i></a>
+                <a href="#"><i class="fa-brands fa-instagram"></i></a>
+                <a href="#"><i class="fa-brands fa-youtube"></i></a>
+            </div>
+            <p>© 2023 Warong Anok Mie. All rights reserved.</p>
+        </footer>
+    </div>
+
+    <script>
+        document.getElementById('toggleButton').addEventListener('click', function(event) {
+            event.preventDefault();
+            var moreText = document.querySelector('.more-text');
+            if (moreText.style.display === 'none' || moreText.style.display === '') {
+                moreText.style.display = 'block';
+                this.textContent = 'Show Less';
+            } else {
+                moreText.style.display = 'none';
+                this.textContent = 'Learn More';
+            }
+        });
+    </script>
+</body>
+</html>

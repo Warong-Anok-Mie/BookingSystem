@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Developers</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+        .main-content {
+            flex: 1;
+        }
+        .container {
+            width: 80%;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #fff;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        h1 {
+            text-align: center;
+            color: #ffa600;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+        th, td {
+            padding: 15px;
+            text-align: center;
+            border: 1px solid #ddd;
+        }
+        th {
+            background-color: #ffa600;
+            color: #fff;
+        }
+        td img {
+            width: 100px;
+            height: auto;
+            border-radius: 50%;
+        }
+        .developer-info {
+            margin-top: 20px;
+            text-align: center;
+        }
+        .developer-info p {
+            margin: 10px 0;
+        }
+        .hero-btn {
+            display: inline-block;
+            text-decoration: none;
+            color: #fff;
+            background-color: #ffa600;
+            padding: 10px 20px;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+        }
+        .hero-btn:hover {
+            background-color: #ffa600;
+        }
+        .header {
+            min-height: 50vh;
+            width: 100%;
+            background-image: linear-gradient(rgba(4, 9, 30, 0.7), rgba(4, 9, 30, 0.7)), url('img/Software-developer.jpg');
+            background-position: center;
+            background-size: cover;
+            color: #fff;
+            text-align: center;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+        }
+        .header h1 {
+            font-size: 3em;
+            margin-bottom: 20px;
+        }
+        .header p {
+            font-size: 1.2em;
+            max-width: 600px;
+        }
+        .footer {
+            background-color: #333;
+            color: #fff;
+            text-align: center;
+            padding: 10px 0;
+        }
+    </style>
+    <script>
+        window.onload = function() {
+            setTimeout(function() {
+                document.querySelector('table').scrollIntoView({ behavior: 'smooth' });
+            }, 2000);
+        };
+    </script>
+</head>
+<body>
+    <div class="main-content">
+        <div class="header">
+            <h1>Meet Our Developers</h1>
+            <p>Our team consists of highly skilled professionals with expertise in various fields of web development.</p>
+        </div>
+        <div class="container">
+            <table>
+                <tr>
+                    <th>Picture</th>
+                    <th>Name</th>
+                    <th>Role</th>
+                </tr>
+                <tr>
+                    <td><img src="img/naji.jpg" alt="Developer 1"></td>
+                    <td>Ahmad Naji Bin Abdul Rahman</td>
+                    <td>Front-End Developer</td>
+                </tr>
+                <tr>
+                    <td><img src="img/hakim.jpg" alt="Developer 2"></td>
+                    <td>Lukman NulHakim Bin Rosli</td>
+                    <td>Back-End Developer</td>
+                </tr>
+                <tr>
+                    <td><img src="img/dylan.jpg" alt="Developer 3"></td>
+                    <td>Dylan Fitrah Ishraf bin Ahmad Shoufik</td>
+                    <td>Assistant Designer</td>
+                </tr>
+                <tr>
+                    <td><img src="img/hisyam.jpg" alt="Developer 4"></td>
+                    <td>Muhammad Zulhisyam Bin Imran</td>
+                    <td>UI/UX Designer</td>
+                </tr>
+               
+            </table>
+            <div class="developer-info">
+                <p>Our team works collaboratively to ensure the highest quality in our work, delivering innovative solutions to meet our clients' needs.</p>
+                <a href="index.html" class="hero-btn">Back to Home</a>
+            </div>
+        </div>
+    </div>
+    <div class="footer">
+        <p>&copy; 2024 WarongAnokMie. All rights reserved.</p>
+    </div>
+</body>
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Sign Up - Warong Anok Mie</title>
+    <link rel="stylesheet" href="signin.css">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="create-account-container">
+        <h1>Admin Sign Up</h1>
+        <form action="admin_signup.php" method="POST">
+            <label for="admin-username">Admin Username</label>
+            <input type="text" id="admin-username" name="admin-username" required>
+            
+            <label for="admin-email">Admin Email</label>
+            <input type="email" id="admin-email" name="admin-email" required>
+            
+            <label for="admin-phone">Phone Number</label>
+            <input type="text" id="admin-phone" name="admin-phone" required>
+            
+            <label for="admin-password">Password</label>
+            <input type="password" id="admin-password" name="admin-password" required>
+            
+            <label for="confirm-password">Confirm Password</label>
+            <input type="password" id="confirm-password" name="confirm-password" required>
+            
+            <button type="submit" name="signup_admin">Sign Up</button>
+        </form>
+        <p>Already signed up? <a href="admin_login.html">Login as Admin</a></p>
+        <p>Forgot password? <a href="changepassword.html">Click here</a></p>
+    </div>
+</body>
+</html>

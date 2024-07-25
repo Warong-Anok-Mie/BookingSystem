@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Shrikhand&family=Cormorant+Garamond:wght@400;700&family=Poppins:wght@400;700&display=swap" rel="stylesheet">
+    <title>Create Account | Nasi Dagang</title>
+    <link rel="stylesheet" href="signin.css">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    
+    <section class="header">
+        <nav class="navbar">
+            <div class="brand-title">
+                <img src="img/WARONG.jpg" alt="Logo" class="logo">
+                Warong Anok Mie
+            </div>
+            <a href="#" class="toggle-button">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </a>
+            <div class="navbar-links">
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="contactus.html">Contact</a></li> 
+                    <li><a href="register.html">Register</a></li>
+                    <li><a href="feedback.html">Feedback</a></li>
+                    <li><a href="#" class="hero-btn book" id="bookTableBtn">Book a Table</a></li>
+                </ul>
+            </div>
+            
+        </nav>
+        </section>
+    <div class="create-account-container show">
+        <h1>Create Account</h1>
+        <!-- Create account form -->
+        <form id="create-account-form" class="create-account-form" action="register.php" method="post">
+            <label for="new-username">Choose a Username:</label>
+            <input type="text" id="new-username" name="new-username" required>
+            <label for="new-password">Choose a Password:</label>
+            <input type="password" id="new-password" name="new-password" required>
+            <label for="new-email">Enter E-mail:</label>
+            <input type="email" id="new-email" name="new-email" required>
+            <label for="new-contact">Enter Contact:</label>
+            <input type="tel" id="new-contact" name="new-contact" required>
+            <label for="new-address">Enter Address:</label>
+            <input type="text" id="new-address" name="new-address" required>
+            <button type="submit">Create Account</button>
+        </form>
+        <!-- Link to sign in -->
+        <p>Already have an account? <a href="Signin_Page.html">Sign In here.</a></p>
+        <p>An Admin? <a href="Signin_Page.html">Sign In here.</a></p>
+    </div>
+    <script src="create_account.js"></script>
+</body>
+</html>
