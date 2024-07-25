@@ -5,7 +5,7 @@ if(isset($_POST["login"])){
     $hostname = "localhost:3307";
     $username = "root";
     $password = "";
-    $dbname = "anokmie";
+    $dbname = "anokmie1";
 
     $connect = mysqli_connect($hostname, $username, $password, $dbname) OR DIE ("Connection failed");
 

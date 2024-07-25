@@ -11,7 +11,7 @@ unset($_SESSION['msg']); // Clear the success message once displayed
 $servername = "localhost:3307"; // Replace with your server name if different
 $username = "root"; // Replace with your database username
 $password = ""; // Replace with your database password
-$dbname = "anokmie"; // Replace with your database name
+$dbname = "anokmie1"; // Replace with your database name
 
 // Create connection
 $conn = new mysqli($servername, $username, $password, $dbname);
