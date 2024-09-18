@@ -5,7 +5,7 @@ session_start(); // Start or resume session
 $hostname = "localhost:3307"; // Update with your MySQL server address and port
 $usernameDB = "root";
 $password = ""; // Replace with your actual database password
-$dbName = "anokmie";
+$dbName = "anokmie1";
 
 // Establishing the connection
 $conn = new mysqli($hostname, $usernameDB, $password, $dbName);

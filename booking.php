@@ -17,7 +17,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['confirm_reservation'])
     $hostname = "localhost:3307";
     $usernameDB = "root";
     $password = ""; // Replace with your database password
-    $dbName = "anokmie";
+    $dbName = "anokmie1";
 
     // Create connection
     $connect = mysqli_connect($hostname, $usernameDB, $password, $dbName) or die ("CONNECTION FAILED");
@@ -237,5 +237,34 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['confirm_reservation'])
         </form>
     </div>
 </section>
+<script>
+    function confirmBooking() {
+        const currentDate = new Date();
+        const selectedDate = document.getElementById("date").value;
+        const selectedStartTime = document.querySelector('select[name="userbookStartTime"]').value;
+        const selectedEndTime = document.querySelector('select[name="userbookEndTime"]').value;
+
+        // Check if the selected date is earlier than today
+        if (selectedDate < currentDate.toISOString().slice(0, 10)) {
+            alert("Invalid date: Please select a date that is today or later.");
+            return false;
+        }
+
+        // Check if the selected start time is earlier than the current time
+        const currentTime = currentDate.toLocaleTimeString().slice(0, 5);
+        if (selectedDate === currentDate.toISOString().slice(0, 10) && selectedStartTime < currentTime) {
+            alert("Invalid start time: Please select a time that is later than the current time.");
+            return false;
+        }
+
+        // Check if the selected end time is earlier than the selected start time
+        if (selectedEndTime < selectedStartTime) {
+            alert("Invalid end time: Please select an end time that is later than the start time.");
+            return false;
+        }
+
+        return true;
+    }
+</script>
 </body>
 </html>

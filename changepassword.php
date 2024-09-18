@@ -145,7 +145,8 @@
             <?php if (isset($_SESSION['error'])) { ?>
                 <div class="error-message"><?php echo $_SESSION['error']; unset($_SESSION['error']); ?></div>
             <?php } ?>
-            <form action="change_password.php" method="POST" onsubmit="return validateForm()">
+            ?>
+            <form action="changePass.php" method="POST" onsubmit="return validateForm()">
                 <label for="current-password">Current Password</label>
                 <input type="password" id="current-password" name="current-password" required>
                 

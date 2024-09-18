@@ -244,7 +244,7 @@
                     // Display confirmation message
                     echo '<script>';
                     echo 'if(confirm("Do you want to approve this booking?")) {';
-                    echo '  window.location.href = "approve_admin.php?receipt_id=' . $receiptId . '";';
+                    echo 'window.location.href = "approve_admin.php?receipt_id=' . $receiptId . '";';
                     echo '}';
                     echo '</script>';
                 } else {

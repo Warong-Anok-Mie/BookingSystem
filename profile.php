@@ -66,7 +66,7 @@
                     $hostname = "localhost:3307";
                     $username = "root";
                     $password = "";
-                    $dbname = "anokmie";
+                    $dbname = "anokmie1";
 
                     $connect = mysqli_connect($hostname, $username, $password, $dbname)
                     OR DIE ("Connection failed");
@@ -93,7 +93,7 @@
                         if(isset($_SESSION['username'])){
                             $user = $_SESSION['username'];
 
-                            $query = "SELECT * FROM receipts WHERE w_username = '$user' AND status = 'approved'";
+                            $query = "SELECT * FROM receipts WHERE username = '$user' AND status = 'approved'";
                             $result = mysqli_query($connect, $query);
 
                             if($result && mysqli_num_rows($result) > 0){

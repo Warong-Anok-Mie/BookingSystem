@@ -15,7 +15,7 @@ $username = htmlspecialchars($_SESSION['username']);
 $hostname = "localhost:3307";
 $usernameDB = "root";
 $password = ""; // Replace with your database password
-$dbName = "anokmie";
+$dbName = "anokmie1";
 
 // Create connection
 $connect = mysqli_connect($hostname, $usernameDB, $password, $dbName) or die ("Connection failed: " . mysqli_connect_error());

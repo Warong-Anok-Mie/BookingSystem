@@ -5,7 +5,7 @@ session_start();
 $servername = "localhost:3307"; // Replace with your server name if different
 $username = "root"; // Replace with your database username
 $password = ""; // Replace with your database password
-$dbname = "anokmie"; // Replace with your database name
+$dbname = "anokmie1"; // Replace with your database name
 
 // Check if approve form is submitted
 if (isset($_POST['approve_id'])) {

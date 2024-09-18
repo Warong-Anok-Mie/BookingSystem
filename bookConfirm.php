@@ -30,7 +30,7 @@ $endTime = isset($_SESSION["userbookEndTime"]) ? htmlspecialchars($_SESSION["use
 $hostname = "localhost:3307";
 $usernameDB = "root";
 $password = ""; // Replace with your database password
-$dbName = "anokmie";
+$dbName = "anokmie1";
 
 // Create database connection
 $conn = new mysqli($hostname, $usernameDB, $password, $dbName);

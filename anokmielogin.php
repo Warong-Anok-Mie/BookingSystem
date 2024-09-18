@@ -12,23 +12,7 @@ if(isset($_POST["login"])){
     $user = $_POST["username"];
     $pass = $_POST["pass"];
 
-    if($user === 'admin'){
-        $sql = "SELECT * FROM logins WHERE a_username = '$user' AND a_password = '$pass'";
-        $sendsql = mysqli_query($connect, $sql);
-
-        if ($sendsql) {
-            if (mysqli_num_rows($sendsql) > 0) {
-                $_SESSION['username'] = $user;
-                echo "<script>alert('SUCCESSFULLY LOGIN AS ADMIN');</script>";
-                echo "<script>window.location.replace('chooseTable.php');</script>";
-                exit; // Ensure script stops execution after redirect
-            } else {
-                echo "<script>alert('WRONG USERNAME OR PASSWORD');</script>";
-                echo "<script>window.location.replace('anokmielogin.php');</script>";
-                exit; // Ensure script stops execution after redirect
-            }
-        }
-    } else {
+    
         $sql = "SELECT * FROM logins WHERE w_username = '$user' AND w_password = '$pass'";
         $sendsql = mysqli_query($connect, $sql);
 
@@ -47,7 +31,6 @@ if(isset($_POST["login"])){
             echo "Query failed!";
         }
     }
-}
 ?>
 
 <!DOCTYPE html>
